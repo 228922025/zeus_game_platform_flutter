@@ -1,4 +1,5 @@
 #include "flutter_window.h"
+#include "native_methods.h"
 
 #include <optional>
 
@@ -27,8 +28,13 @@ bool FlutterWindow::OnCreate() {
   RegisterPlugins(flutter_controller_->engine());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
 
+    // 注册方法
+    RegisterNativeMethods(flutter_controller_->engine());
+
   flutter_controller_->engine()->SetNextFrameCallback([&]() {
-    this->Show();
+
+
+      this->Show();
   });
 
   // Flutter can complete the first frame before the "show window" callback is
