@@ -6,9 +6,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
 
-
-
-
   runApp(const MainApp());
 }
 
@@ -19,9 +16,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WindowsNative.getMotherboard().then((result) => {
-      print('$result')
-    });
+    // WindowsNative.getMotherboard().then((result) => {
+    //   print('$result')
+    // });
 
 
     return GetMaterialApp(
